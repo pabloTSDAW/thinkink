@@ -378,6 +378,18 @@ a:hover, a:focus, a:active {
 }
 
 
+/*-------------------- EFECTOS WOW ------------------------*/
+#services .paso1 {
+  animation-delay: 0.5s;
+}
+#services .paso2 {
+  animation-delay: 1.5s;
+}
+#services .paso3 {
+  animation-delay: 2.5s;
+}
+
+
 /* --------- CONTACTO ----------- */
 
 section#contact {
@@ -531,8 +543,14 @@ section#contact :-ms-input-placeholder {
 
 .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: #1D809F;
 }
+
+.backside .card a:hover {
+    font-size: 18px;
+    color: #155d74;
+}
+
 
 .frontside .card .card-title,
 .backside .card .card-title {
