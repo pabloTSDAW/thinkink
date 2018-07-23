@@ -42,16 +42,10 @@
         <a class="js-scroll-trigger" href="index.html">Home</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#aboutus">About Us</a>
-      </li>
-      <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="marketing.html">Digital Marketing</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="graphicDesign.html">Graphic Design</a>
+        <a class="js-scroll-trigger active" href="graphicDesign.html">Graphic Design</a>
       </li>
       <li class="sidebar-nav-item">
         <a class="js-scroll-trigger" href="webApp.html">Web & App</a>
@@ -65,12 +59,74 @@
   <!-- Header -->
   <header class="masthead mastheadDesign d-flex">
     <div class="container text-center my-auto">
-      <img src="img/thinkink.png" class="img-fluid animated fadeIn">
-      <h1 class="mb-1 animated fadeInUp" style="color: white;">WEB & APP</h1>
+      <img src="img/thinkink-shadow.png" class="img-fluid animated fadeIn">
+      <h1 class="mb-1 animated fadeInUp" style="color: white; text-shadow: 5px 5px 5px black">GRAPHIC DESIGN</h1>
     </div>
     <div class="overlay"></div>
   </header>
 
+
+  <!-- What is web design -->
+  <section class="content-section bg-light">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="mb-5">Create your corporate identity</h2>
+          <div class="row">
+            <div class="col-12 col-md-7">
+              <p class="text-left">We take care of your brand image, define your corporate colors and create graphic resources that define the visual identity of your company. We help you to establish your corporate identity through the development of personalized materials.
+                Libraries, pens, computer mats, vinyl for walls and cars, in short, all the graphic elements you want to include in your environment.</p>
+              <p class="text-left">Our graphic designers help you define the principles and values of your company in an image that is easily recognizable and allows the customer to memorize your brand. We define your image to distinguish you from your competitionWe manage
+                your advertising campaigns by making all the graphic and physical resources you need to promote yourself. Flyers, diptychs, triptychs, personalized material, mupis, editorial design, publications and advertising posters.</p>
+            </div>
+            <div class="col-12 col-md-5 text-center" style="align-self: center;">
+              <img src="img/graphicDesign/design.png" alt="" class="img-fluid wow animated rollIn">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Portfolio -->
+  <section class="content-section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="mb-5">Portfolio</h2>
+          <div class="row mb-5 text-center botones">
+            <button type="button" class="btn btn-primary" onclick="galeriaGeneral()">All</button>
+            <button type="button" class="btn btn-primary" onclick="galeriaLogos()">Logo</button>
+            <button type="button" class="btn btn-primary" onclick="galeriaCarteles()">Posters</button>
+            <button type="button" class="btn btn-primary" onclick="galeriaTarjetas()">Business cards</button>
+          </div>
+          <div class="row">
+            <div class="card-columns">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact us -->
+  <section class="content-section bg-light" id="about">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>Let's work together!</h2>
+            <p class="lead mb-5">Do not hesitate, ask for your budget now without obligation. We will get in touch with you as soon as possible.</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <div class="modal fade" id="myModal">
+  </div>
 
   <!-- Footer -->
   <footer class="footer text-center">
@@ -119,6 +175,89 @@
   <script src="js/wow.min.js"></script>
   <script type="text/javascript">
     new WOW().init();
+
+    var galeria = [];
+
+    function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    };
+
+
+    function galeriaGeneral() {
+      galeria = [];
+      for (var i = 1; i <= 10; i++) {
+        galeria.push('img/graphicDesign/logos/' + i + '.jpg')
+      };
+      for (var i = 1; i <= 6; i++) {
+        galeria.push('img/graphicDesign/Carteles/' + i + '.jpg')
+      };
+      for (var i = 1; i <= 4; i++) {
+        galeria.push('img/graphicDesign/tarjetas/' + i + '.jpg')
+      };
+      shuffle(galeria);
+      creaCards();
+    };
+
+    function galeriaLogos() {
+      galeria = [];
+      for (var i = 1; i <= 10; i++) {
+        galeria.push('img/graphicDesign/logos/' + i + '.jpg')
+      };
+      shuffle(galeria);
+      creaCards();
+    };
+
+    function galeriaCarteles() {
+      galeria = [];
+      for (var i = 1; i <= 6; i++) {
+        galeria.push('img/graphicDesign/Carteles/' + i + '.jpg')
+      };
+      shuffle(galeria);
+      creaCards();
+    };
+
+    function galeriaTarjetas() {
+      galeria = [];
+      for (var i = 1; i <= 4; i++) {
+        galeria.push('img/graphicDesign/tarjetas/' + i + '.jpg')
+      };
+      shuffle(galeria);
+      creaCards();
+    };
+
+    galeriaGeneral();
+
+    function creaCards() {
+      $('.card-columns').empty();
+      for (var i = 0; i <= galeria.length - 1; i++) {
+        $('.card-columns').append(
+          '<div class="card">' +
+          '<img class="card-img-top" src="' + galeria[i] + '" alt="Card image cap" onclick="ampliar(galeria[' + i + '])"/>' +
+          '</div>'
+        );
+      }
+    }
+
+    function ampliar(img) {
+      console.log(img);
+      $('#myModal').empty();
+      $('#myModal').append(
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<button type="button" class="close text-center" data-dismiss="modal">Cerrar</button>' +
+        '<img class="img-fluid" src="' + img + '"/>' +
+        '</div>' +
+        '</div>'
+      );
+      $('#myModal').modal();
+    }
   </script>
 
 </body>

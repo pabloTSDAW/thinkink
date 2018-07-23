@@ -1,18 +1,23 @@
-body,
-html {
+body, html {
   width: 100%;
   height: 100%;
 }
 
-/* body {
-  font-family: 'Source Sans Pro';
-} */
-
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/comfortaa.ttf');
+}
 
 body {
   font-family: 'Comfortaa', cursive;
 }
+
+/* @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+body {
+  font-family: 'Comfortaa', cursive;
+} */
 
 .btn-xl {
   padding: 1.25rem 2.5rem;
@@ -32,12 +37,7 @@ body {
   text-transform: uppercase;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
@@ -46,6 +46,7 @@ h6 {
 }
 
 /* Map */
+
 .map {
   height: 30rem;
 }
@@ -100,7 +101,7 @@ h6 {
 }
 
 .masthead h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
   padding: 0;
 }
@@ -110,7 +111,7 @@ h6 {
   animation-delay: 1s;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 767px) {
   .masthead {
     height: 110vh;
   }
@@ -120,6 +121,7 @@ h6 {
 }
 
 /* Side Menu */
+
 #sidebar-wrapper {
   position: fixed;
   z-index: 2;
@@ -158,12 +160,15 @@ h6 {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
   text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand {
+.sidebar-nav-item .active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav>.sidebar-brand {
   font-size: 1.2rem;
   background: rgba(52, 58, 64, 0.1);
   height: 80px;
@@ -173,11 +178,11 @@ h6 {
   padding-left: 15px;
 }
 
-.sidebar-nav > .sidebar-brand a {
+.sidebar-nav>.sidebar-brand a {
   color: #fff;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
+.sidebar-nav>.sidebar-brand a:hover {
   color: #fff;
   background: none;
 }
@@ -383,18 +388,19 @@ a:hover, a:focus, a:active {
   color: #ecb807 !important;
 }
 
-
 /*-------------------- EFECTOS WOW ------------------------*/
-#services .paso1 {
+
+.paso1 {
   animation-delay: 0.5s;
 }
-#services .paso2 {
+
+.paso2 {
   animation-delay: 1.5s;
 }
-#services .paso3 {
+
+.paso3 {
   animation-delay: 2.5s;
 }
-
 
 /* --------- CONTACTO ----------- */
 
@@ -458,7 +464,6 @@ section#contact :-ms-input-placeholder {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-
 /*--------------------- ABOUT US ------------------------*/
 
 section#aboutus .duck {
@@ -482,6 +487,9 @@ section#aboutus .duck {
 }
 
 @media (max-width: 767px) {
+  section {
+    padding: 0 8%;
+  }
   section#aboutus .duck {
     background-image: url("../img/aboutus-movil.png");
     background-size: cover;
@@ -504,140 +512,121 @@ section#aboutus .duck {
   }
 }
 
-
-
 /*--------------------- TEAM MEMBERS ------------------------*/
+
 #team {
   background-color: #1D809F;
 }
 
 #team .card {
-    border: none;
-    background: #ffffff;
+  border: none;
+  background: #ffffff;
 }
 
-.image-flip:hover .backside,
-.image-flip.hover .backside {
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    border-radius: .25rem;
+.image-flip:hover .backside, .image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: .25rem;
 }
 
-.image-flip:hover .frontside,
-.image-flip.hover .frontside {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+.image-flip:hover .frontside, .image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .mainflip {
-    -webkit-transition: 1s;
-    -webkit-transform-style: preserve-3d;
-    -ms-transition: 1s;
-    -moz-transition: 1s;
-    -moz-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transition: 1s;
-    transform-style: preserve-3d;
-    position: relative;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
 }
 
 .frontside {
-    position: relative;
-    -webkit-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    z-index: 2;
-    margin-bottom: 30px;
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 30px;
 }
 
 .backside {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-    -ms-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
 }
 
-.frontside,
-.backside {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: 1s;
-    -webkit-transform-style: preserve-3d;
-    -moz-transition: 1s;
-    -moz-transform-style: preserve-3d;
-    -o-transition: 1s;
-    -o-transform-style: preserve-3d;
-    -ms-transition: 1s;
-    -ms-transform-style: preserve-3d;
-    transition: 1s;
-    transform-style: preserve-3d;
+.frontside, .backside {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
 }
 
-.frontside .card,
-.backside .card {
-    min-height: 312px;
+.frontside .card, .backside .card {
+  min-height: 312px;
 }
 
 .backside .card a {
-    font-size: 18px;
-    color: #1D809F;
+  font-size: 18px;
+  color: #1D809F;
 }
 
 .backside .card a:hover {
-    font-size: 18px;
-    color: #155d74;
+  font-size: 18px;
+  color: #155d74;
 }
 
-
-.frontside .card .card-title,
-.backside .card .card-title {
-    color: #1D809F;
+.frontside .card .card-title, .backside .card .card-title {
+  color: #1D809F;
 }
 
 .frontside .card .card-body img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
 }
 
-
 /*---------------------- CAMBIOS ----------------------------*/
+
 @media (max-width: 768px) {
-  .masthead img{
+  .masthead img {
     width: 75%;
   }
 }
 
-
-
 /*---------------------- WEB & APP ----------------------------*/
+
 .mastheadWeb {
-  background: url("../img/web-app-bg.jpg");
-  background-size: cover;
-}
-
-.masthead img {
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-}
-
-/*---------------------- WEB & APP ----------------------------*/
-.mastheadDesign {
   background: url("../img/web-app-bg.jpg");
   background-size: cover;
 }
@@ -651,7 +640,7 @@ section#aboutus .duck {
   text-align: left;
 }
 
-#accordionWeb h5{
+#accordionWeb h5 {
   color: white !important;
 }
 
@@ -684,9 +673,94 @@ section#aboutus .duck {
   transform: scale(1.3);
 }
 
+.MultiCarousel {
+  float: left;
+  overflow: hidden;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+}
+
+.MultiCarousel .MultiCarousel-inner {
+  transition: 1s ease all;
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+  float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst {
+  position: absolute;
+  border-radius: 50%;
+  top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+  left: 0;
+}
+
+.MultiCarousel .rightLst {
+  right: 0;
+}
+
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
+  pointer-events: none;
+  background: #ccc;
+}
+
 @media (max-width: 767px) {
   .technologies div svg {
     opacity: 1;
     width: 50% !important;
   }
+}
+
+/*---------------------- GRAPHIC DESIGN ----------------------------*/
+
+.mastheadDesign {
+  background: url("../img/graphicDesign.jpg");
+  background-size: cover;
+}
+
+.botones button {
+  margin-right: 10px;
+}
+
+.card-columns {
+  column-count: 4;
+}
+
+@media (max-width: 1024px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+
+
+/*---------------------- ONLINE MARKETING ----------------------------*/
+
+.mastheadMarketing {
+  background: url("../img/marketing.jpg");
+  background-size: cover;
+}
+
+.socialmedia p {
+  color: #212529;
+}
+
+.rrss i {
+  margin: 10px 0;
 }
