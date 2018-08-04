@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -722,6 +722,71 @@ section#aboutus .duck {
   }
 }
 
+/* */
+@media (min-width: 768px) {
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
 /*---------------------- GRAPHIC DESIGN ----------------------------*/
 
 .mastheadDesign {
@@ -731,6 +796,7 @@ section#aboutus .duck {
 
 .botones button {
   margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .card-columns {
@@ -763,4 +829,177 @@ section#aboutus .duck {
 
 .rrss i {
   margin: 10px 0;
+}
+
+
+/*--------------------------- PORTFOLIO ------------------------------ */
+.portfolio-item {
+  padding-right: 5px;
+  padding-left: 5px;
+  min-height: 235px;
+}
+
+.portfolio-bg {
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-bottom: 3px double #eee;
+}
+
+.portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shuffle Filter*/
+
+#filter {
+  margin: 0 0 35px;
+  text-align: center;
+}
+
+#filter li a {
+  color: #68c3a3;
+  display: block;
+  text-transform: uppercase;
+  padding: 0 15px;
+  border-radius: 4px;
+  transition: inherit;
+}
+
+#filter li a.active, #filter li a:hover {
+  position: relative;
+  background: #68c3a3;
+  color: #fff;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+#filter li a.active::after, #filter li a:hover::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid rgba(104, 195, 163, 1);
+  bottom: -9px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+.tt-overlay {
+  position: absolute;
+  background-color: rgba(26, 30, 31, 0.85);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.portfolio-info, .links, .links a i, .links a i::after, .tt-overlay {
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.links {
+  width: 90px;
+  height: 40px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -45px;
+  opacity: 0;
+  -webkit-transform: translate(0, -50px);
+  -moz-transform: translate(0, -50px);
+  -ms-transform: translate(0, -50px);
+  -o-transform: translate(0, -50px);
+  transform: translate(0, -50px);
+}
+
+.links a i {
+  position: relative;
+  color: #68c3a3;
+  font-size: 16px;
+  margin: 0 13px;
+  z-index: 100;
+}
+
+.links a:hover i {
+  color: #fff;
+}
+
+.links a i::after {
+  position: absolute;
+  content: "";
+  left: -7px;
+  top: -7px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #68c3a3;
+  z-index: -1;
+  border-radius: 3px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.links a:hover i::after {
+  background-color: #68c3a3;
+}
+
+.portfolio-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  background-color: #68c3a3;
+  color: #fff;
+  height: 45px;
+  width: 100%;
+  text-align: center;
+}
+
+.portfolio:hover .tt-overlay, .portfolio:hover .links {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.portfolio:hover .portfolio-info {
+  bottom: 0;
+}
+
+.portfolio-info h3 {
+  font-size: 14px;
+  line-height: 45px;
+  font-weight: 700;
+  margin: 0;
+}
+
+#myModal .modal-dialog {
+  max-width: 50%;
+}
+
+
+/*------------------------- ANUNCIO ------------------------------*/
+
+#anuncio {
+  background: url('../img/bg-callout.png') no-repeat top center;
+  background-color: #1D809F;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+@media (max-width: 768px){
+  #anuncio h2 {
+    font-size: 2.5rem;
+  }
 }

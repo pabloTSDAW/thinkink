@@ -66,8 +66,8 @@
   </header>
 
 
-  <!-- What is web design -->
-  <section class="content-section bg-light">
+  <!-- Intro -->
+  <section class="content-section">
     <div class="container text-center">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -89,6 +89,56 @@
   </section>
 
 
+  <!-- Work for you -->
+  <section class="content-section bg-light">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2 class="mb-5">What will we do for you?</h2>
+          <div class="row socialmedia mb-5">
+            <div class="col-md-4 mb-5 mb-lg-0 paso1">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="fas fa-user-tie"></i>
+            </span>
+              <h4>
+              <strong>Corporate Image</strong>
+            </h4>
+              <p class="text-faded mb-0">Logo & Naming</p>
+              <p class="text-faded mb-0">Bespoke branding</p>
+              <p class="text-faded mb-0">Business cards</p>
+              <p class="text-faded mb-0">Work Clothing</p>
+            </div>
+            <div class="col-md-4 mb-5 mb-lg-0 paso3">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="fas fa-bullhorn"></i>
+            </span>
+              <h4>
+              <strong>Advertising</strong>
+            </h4>
+              <p class="text-faded mb-0">Digital & Printed</p>
+              <p class="text-faded mb-0">Banners</p>
+              <p class="text-faded mb-0">Flyers</p>
+              <p class="text-faded mb-0">Display Items</p>
+            </div>
+            <div class="col-md-4 mb-5 mb-md-0 paso2">
+              <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="fas fa-camera-retro"></i>
+            </span>
+              <h4>
+              <strong>Audiovisual Edition</strong>
+            </h4>
+              <p class="text-faded mb-0">Video</p>
+              <p class="text-faded mb-0">Audio</p>
+              <p class="text-faded mb-0">Photography</p>
+              <p class="text-faded mb-0">Apps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Portfolio -->
   <section class="content-section">
     <div class="container text-center">
@@ -96,10 +146,9 @@
         <div class="col-lg-10 mx-auto">
           <h2 class="mb-5">Portfolio</h2>
           <div class="row mb-5 text-center botones">
-            <button type="button" class="btn btn-primary" onclick="galeriaGeneral()">All</button>
             <button type="button" class="btn btn-primary" onclick="galeriaLogos()">Logo</button>
             <button type="button" class="btn btn-primary" onclick="galeriaCarteles()">Posters</button>
-            <button type="button" class="btn btn-primary" onclick="galeriaTarjetas()">Business cards</button>
+            <button type="button" class="btn btn-primary" onclick="galeriaTarjetas()">Varios</button>
           </div>
           <div class="row">
             <div class="card-columns">
@@ -114,16 +163,16 @@
 
   <!-- Contact us -->
   <section class="content-section bg-light" id="about">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h2>Let's work together!</h2>
-            <p class="lead mb-5">Do not hesitate, ask for your budget now without obligation. We will get in touch with you as soon as possible.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="contact.html">Contact us</a>
-          </div>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Let's work together!</h2>
+          <p class="lead mb-5">Do not hesitate, ask for your budget now without obligation. We will get in touch with you as soon as possible.</p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="contact.html">Contact us</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <div class="modal fade" id="myModal">
   </div>
@@ -165,7 +214,7 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
+  <script src="js/stylish-portfolio.js"></script>
 
   <!-- Contact form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>
@@ -176,88 +225,6 @@
   <script type="text/javascript">
     new WOW().init();
 
-    var galeria = [];
-
-    function shuffle(a) {
-      var j, x, i;
-      for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
-      }
-      return a;
-    };
-
-
-    function galeriaGeneral() {
-      galeria = [];
-      for (var i = 1; i <= 10; i++) {
-        galeria.push('img/graphicDesign/logos/' + i + '.jpg')
-      };
-      for (var i = 1; i <= 6; i++) {
-        galeria.push('img/graphicDesign/Carteles/' + i + '.jpg')
-      };
-      for (var i = 1; i <= 4; i++) {
-        galeria.push('img/graphicDesign/tarjetas/' + i + '.jpg')
-      };
-      shuffle(galeria);
-      creaCards();
-    };
-
-    function galeriaLogos() {
-      galeria = [];
-      for (var i = 1; i <= 10; i++) {
-        galeria.push('img/graphicDesign/logos/' + i + '.jpg')
-      };
-      shuffle(galeria);
-      creaCards();
-    };
-
-    function galeriaCarteles() {
-      galeria = [];
-      for (var i = 1; i <= 6; i++) {
-        galeria.push('img/graphicDesign/Carteles/' + i + '.jpg')
-      };
-      shuffle(galeria);
-      creaCards();
-    };
-
-    function galeriaTarjetas() {
-      galeria = [];
-      for (var i = 1; i <= 4; i++) {
-        galeria.push('img/graphicDesign/tarjetas/' + i + '.jpg')
-      };
-      shuffle(galeria);
-      creaCards();
-    };
-
-    galeriaGeneral();
-
-    function creaCards() {
-      $('.card-columns').empty();
-      for (var i = 0; i <= galeria.length - 1; i++) {
-        $('.card-columns').append(
-          '<div class="card">' +
-          '<img class="card-img-top" src="' + galeria[i] + '" alt="Card image cap" onclick="ampliar(galeria[' + i + '])"/>' +
-          '</div>'
-        );
-      }
-    }
-
-    function ampliar(img) {
-      console.log(img);
-      $('#myModal').empty();
-      $('#myModal').append(
-        '<div class="modal-dialog">' +
-        '<div class="modal-content">' +
-        '<button type="button" class="close text-center" data-dismiss="modal">Cerrar</button>' +
-        '<img class="img-fluid" src="' + img + '"/>' +
-        '</div>' +
-        '</div>'
-      );
-      $('#myModal').modal();
-    }
   </script>
 
 </body>
