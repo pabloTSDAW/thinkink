@@ -664,12 +664,7 @@ section#aboutus .duck {
   padding: 30px;
 }
 
-.technologies div svg {
-  opacity: 0.5;
-}
-
 .technologies div svg:hover {
-  opacity: 1;
   transform: scale(1.3);
 }
 
